@@ -5,7 +5,9 @@ const PORT = 5000;
 const cors = require("cors")
 
 
-app.use(cors());
+app.use(cors({
+    origin:'https://todo-shahzad.vercel.app'
+}));
 
 app.use(express.json());
 //db connection

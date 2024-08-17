@@ -19,7 +19,7 @@ const Home = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     // console.log(inputUser);
-    const res = await axios.post("http://localhost:5000/createuser", inputUser);
+    const res = await axios.post("https://todo-shahzad.onrender.com/createuser", inputUser);
     console.log(res);
     fetchAllUser();
   };
@@ -27,7 +27,7 @@ const Home = () => {
   // data fetching all
   const [userData, setUserData] = useState([]);
   const fetchAllUser = async () => {
-    const res = await axios.get("http://localhost:5000/readalluser");
+    const res = await axios.get("https://todo-shahzad.onrender.com/readalluser");
     console.log(res);
     setUserData(res.data);
   };
@@ -36,7 +36,7 @@ const Home = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    const res = await axios.delete(`http://localhost:5000/delete/${id}`);
+    const res = await axios.delete(`https://todo-shahzad.onrender.com/delete/${id}`);
     if (res.status === 200) {
       fetchAllUser();
     }
