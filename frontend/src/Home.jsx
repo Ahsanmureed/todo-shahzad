@@ -154,7 +154,7 @@ const Home = () => {
               </tr>
             ))}
           </tbody>
-        </table></>:<h1>No user Found</h1>
+        </table></>:<h1 className=" text-center text-2xl mt-2 font-semibold">No user Found</h1>
         }
       </div>
     </div>

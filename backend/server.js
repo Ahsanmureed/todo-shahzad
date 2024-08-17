@@ -6,13 +6,13 @@ const cors = require("cors")
 
 
 app.use(cors({
-    origin:'https://todo-shahzad.vercel.app'
+    origin:['https://todo-shahzad.vercel.app','http://localhost:3000']
 }));
 
 app.use(express.json());
 //db connection
 
-mongoose.connect('mongodb://127.0.0.1:27017/mearnstack_crud').then(() => {
+mongoose.connect('mongodb+srv://ahsanmureed00:ahsan@cluster0.yz3vc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0').then(() => {
     console.log("db connection successfully")
 }).catch((error) => {
     console.log(error)
