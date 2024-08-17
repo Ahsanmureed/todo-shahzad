@@ -6,9 +6,11 @@ const cors = require("cors")
 
 
 app.use(cors({
-    origin:['https://todo-shahzad.vercel.app','http://localhost:3000']
+    origin:['https://todo-shahzad.vercel.app','http://localhost:3000'],
+    methods: ["GET", "PUT", "DELETE", "POST"],
+    credentials:true,
 }));
-
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 //db connection
 

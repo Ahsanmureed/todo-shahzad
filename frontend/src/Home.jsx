@@ -27,7 +27,7 @@ const Home = () => {
   // data fetching all
   const [userData, setUserData] = useState([]);
   const fetchAllUser = async () => {
-    const res = await axios.get("https://todo-shahzad.onrender.com/readalluser");
+    const res = await axios.get("http://localhost:5000/readalluser");
     console.log(res);
     setUserData(res.data);
   };
