@@ -12,12 +12,17 @@ app.use(cors({
 app.use(express.json());
 //db connection
 
-mongoose.connect('mongodb+srv://ahsanmureed00:ahsan@cluster0.yz3vc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0').then(() => {
-    console.log("db connection successfully")
-}).catch((error) => {
-    console.log(error)
-});
-
+const connection = async ()=>{
+   try {
+    const connect = await mongoose.connect('mongodb+srv://ahsanmureed00:ahsan@cluster0.yz3vc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+    console.log('db connected');
+    
+   } catch (error) {
+    
+   }
+    
+}
+connection();
 
 //user Sehema
 const userSchema = new mongoose.Schema({
@@ -58,9 +63,7 @@ app.post("/createuser", async (req, res) => {
 app.get("/readalluser", async (req, res) => {
     try {
         const userData = await User.find({});
-        return res.status(200).json({
-            userData
-        })
+        res.send(userData)
     } catch (error) {
         res.send(error);
     }
