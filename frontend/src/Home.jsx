@@ -91,7 +91,8 @@ const Home = () => {
       </form>
 
       <div className="relative overflow-x-auto shadow-md">
-        <table className="w-full text-lg text-center text-gray-500 ">
+        {
+          userData.length>0 ? <><table className="w-full text-lg text-center text-gray-500 ">
           <thead className="text-[17px] text-gray-700 uppercase bg-gray-500">
             <tr>
               <th scope="col" className="px-6 py-3">
@@ -153,7 +154,8 @@ const Home = () => {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table></>:<h1>No user Found</h1>
+        }
       </div>
     </div>
   );
