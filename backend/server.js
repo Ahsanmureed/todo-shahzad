@@ -58,7 +58,9 @@ app.post("/createuser", async (req, res) => {
 app.get("/readalluser", async (req, res) => {
     try {
         const userData = await User.find({});
-        res.send(userData)
+        return res.status(200).json({
+            userData
+        })
     } catch (error) {
         res.send(error);
     }
